@@ -19,3 +19,18 @@ code ~/.zshrc
 
 ### useful
 docker-compose exec app bash
+
+### iniciando app
+- a partir de agora rodar comandos sempre dentro do container
+
+npm init -y
+
+npm install typescript @types/node --save-dev
+
+npm install ts-node --save-dev
+
+npm run ts-node
+
+## configurando typescript
+
+npx tsc --init

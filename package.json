@@ -1,0 +1,27 @@
+{
+  "name": "projeto-pratico-typescript-backend",
+  "version": "1.0.0",
+  "description": "Projeto-pratico-TypeScript-Back-end",
+  "main": "index.js",
+  "scripts": {
+    "ts-node": "ts-node",
+    "tsc": "tsc",
+    "clean:tsc": "rm tsconfig.tsbuildinfo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lgustavopalmieri/Projeto-pratico-TypeScript-Back-end.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lgustavopalmieri/Projeto-pratico-TypeScript-Back-end/issues"
+  },
+  "homepage": "https://github.com/lgustavopalmieri/Projeto-pratico-TypeScript-Back-end#readme",
+  "devDependencies": {
+    "@types/node": "^14.14.31",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}

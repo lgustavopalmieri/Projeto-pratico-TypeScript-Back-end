@@ -1,3 +1,4 @@
+# slim pode ser usado para produção
 FROM node:14.15.4-slim
 
 # usuário do container vem como o root (padrão)
@@ -9,4 +10,4 @@ USER node
 WORKDIR /home/node/app
 
 # para o container não morrer
-CMD ["tail", "-f", "/dev/null"]
+CMD ["sh","-c","npm install && tail -f /dev/null"]
