@@ -18,9 +18,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 code ~/.zshrc
 
 ### useful
+
 docker-compose exec app bash
 
 ### iniciando app
+
 - a partir de agora rodar comandos sempre dentro do container
 
 npm init -y
@@ -31,6 +33,17 @@ npm install ts-node --save-dev
 
 npm run ts-node
 
-## configurando typescript
+### configurando typescript
 
 npx tsc --init
+
+### configurando o jest
+
+docker-compose exec app bash
+
+npm install jest @types/jest --save-dev
+
+npx jest --init
+
+- swc compila muito mais rápido
+  npm install @swc/core @swc/jest --save-dev
