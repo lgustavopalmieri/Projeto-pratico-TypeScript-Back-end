@@ -47,3 +47,17 @@ npx jest --init
 
 - swc compila muito mais rápido
   npm install @swc/core @swc/jest --save-dev
+
+###
+
+npm i lodash --save
+npm i --save-dev @types/lodash
+
+
+###
+
+npm install uuid
+npm install @types/uuid --save-dev
+
+
+https://www.uuidgenerator.net/
