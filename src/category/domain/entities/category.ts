@@ -6,7 +6,7 @@ export type CategoryProperties = {
   is_active?: boolean;
   created_at?: Date;
 };
-
+ 
 export default class Category {
   // This object value allows independent ids
   public readonly id: UniqueEntityId;
