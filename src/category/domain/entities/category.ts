@@ -1,4 +1,4 @@
-import UniqueEntityId from "../../../@seedwork/domain/unique-entity-id.vo";
+import UniqueEntityId from "../../../@seedwork/domain/value-objects/unique-entity-id.vo";
 
 export type CategoryProperties = {
   name: string;
@@ -6,7 +6,7 @@ export type CategoryProperties = {
   is_active?: boolean;
   created_at?: Date;
 };
- 
+
 export default class Category {
   // This object value allows independent ids
   public readonly id: UniqueEntityId;
