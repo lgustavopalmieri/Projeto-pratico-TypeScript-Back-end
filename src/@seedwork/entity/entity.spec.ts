@@ -9,8 +9,6 @@ describe("Entity unit tests", () => {
     const arrange = { prop1: "value1", prop2: 10 };
     const entity = new StubEntity(arrange);
 
-    console.log(entity.id);
-
     expect(entity.props).toStrictEqual(arrange);
     expect(entity.uniqueEntityId).toBeInstanceOf(UniqueEntityId);
     expect(entity.id).not.toBeNull();

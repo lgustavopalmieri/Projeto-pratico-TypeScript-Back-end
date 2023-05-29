@@ -146,4 +146,50 @@ describe("Category Unit Tests", () => {
     });
     expect(category.created_at).toBe(created_at);
   });
+
+  test("should update name or description", () => {
+    let category = new Category({
+      name: "Movie to update",
+      description: "Movie description to update",
+    });
+
+    expect(category.name).toBe("Movie to update");
+    expect(category.description).toBe("Movie description to update");
+
+    category.update({ name: "Updated name" });
+
+    expect(category.name).toBe("Updated name");
+    expect(category.description).toBe("Movie description to update");
+
+    category.update({ description: "Updated description" });
+    expect(category.description).toBe("Updated description");
+  });
+
+  test("should activate a category", () => {
+    let category = new Category({
+      name: "Movie to update",
+      description: "Movie description to update",
+      is_active: false,
+    });
+
+    expect(category.is_active).toBeFalsy();
+
+    category.activate();
+
+    expect(category.is_active).toBeTruthy();
+  });
+
+  test("should deactivate a category", () => {
+    let category = new Category({
+      name: "Movie to update",
+      description: "Movie description to update",
+      is_active: true,
+    });
+
+    expect(category.is_active).toBeTruthy();
+
+    category.deactivate();
+
+    expect(category.is_active).toBeFalsy();
+  });
 });

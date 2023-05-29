@@ -39,6 +39,23 @@ export default class Category extends Entity<CategoryProperties> {
   get created_at() {
     return this.props.created_at;
   }
+
+  public update({ name, description }: Partial<CategoryProperties>): void {
+    if (name) {
+      this.props.name = name;
+    }
+    if (description) {
+      this.props.description = description;
+    }
+  }
+
+  public activate(): void {
+    this.props.is_active = true;
+  }
+
+  public deactivate(): void {
+    this.props.is_active = false;
+  }
 }
 
 // TDD - Kent Back
