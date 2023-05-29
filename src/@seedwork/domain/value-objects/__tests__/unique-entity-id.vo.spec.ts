@@ -36,7 +36,7 @@ describe("UniqueEntityId Unit Tests", () => {
     expect(validateSpy).toHaveBeenCalled();
   });
 
-  it("should accept an uuid provided in constructor", () => {
+  it("should accept an uuid not provided in constructor", () => {
     //const validateSpy = spyValidateMethod();
 
     const valueObject = new UniqueEntityId();

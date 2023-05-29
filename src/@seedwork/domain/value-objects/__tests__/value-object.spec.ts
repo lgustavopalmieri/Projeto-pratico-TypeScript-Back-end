@@ -20,7 +20,7 @@ describe("ValueObject Unit Tests", () => {
     console.log(`${new StubValueObject(new Number(4))}`);
   });
 
-  it("should conver to string", () => {
+  it("should convert to string", () => {
     const date = new Date();
     let arrange = [
       // { received: null, expected: "null" },
@@ -47,7 +47,7 @@ describe("ValueObject Unit Tests", () => {
     });
   });
 
-  it("should validate imutable vaule object", () => {
+  it("should validate immutable vaule object", () => {
     const obj = {
       prop1: "value1",
       deep: { prop2: "value2", prop3: new Date() },
