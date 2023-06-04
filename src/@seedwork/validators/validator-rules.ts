@@ -7,7 +7,9 @@ export default class ValidatorRules {
     return new ValidatorRules(value, property);
   }
 
-  required(): this {
+  // Omit<this, property> allows us to combinate validation rules
+
+  required(): Omit<this, "required"> {
     // !this.value => below is better to show the rules intentions
     if (this.value === null || this.value === undefined || this.value === "") {
       throw new ValidationError(`${this.property} is required`);
@@ -15,32 +17,30 @@ export default class ValidatorRules {
     return this;
   }
 
-  string(): this {
-    if (typeof this.value !== "string") {
+  string(): Omit<this, "string"> {
+    if (!isEmpty(this.value) && typeof this.value !== "string") {
       throw new ValidationError(`${this.property} must be a string`);
     }
     return this;
   }
 
-  maxLength(max: number): this {
-    if (this.value.length > max) {
+  maxLength(max: number): Omit<this, "maxLength"> {
+    if (!isEmpty(this.value) && this.value.length > max) {
       throw new ValidationError(
         `${this.property} must be less or ${max} characters`
       );
     }
     return this;
   }
+
+  boolean(): Omit<this, "boolean"> {
+    if (!isEmpty(this.value) && typeof this.value !== "boolean") {
+      throw new ValidationError(`${this.property} must be a boolean`);
+    }
+    return this;
+  }
 }
 
-// ValidatorRules.values("xpto value", "fieldname").required().string().maxLength();
-
-//OPTION
-// namespace ValidatorRules{
-//   values() {}
-
-//   required() {}
-
-//   string() {}
-
-//   maxLength(max: number) {}
-// }
+export function isEmpty(value: any): boolean {
+  return value === null || value === undefined;
+}
