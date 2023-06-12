@@ -192,7 +192,7 @@ describe("ValidatorRules unit tests", () => {
     );
   });
 
-  it("should throw a validation error when combine two or more validation reules", () => {
+  it("should throw a validation error when combine two or more validation rules", () => {
     let validator = ValidatorRules.values(null, "field");
     expect(() => validator.required().string()).toThrow(
       new ValidationError(`field is required`)

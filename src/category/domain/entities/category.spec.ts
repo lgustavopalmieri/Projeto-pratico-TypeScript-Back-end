@@ -156,12 +156,18 @@ describe("Category Unit Tests", () => {
     expect(category.name).toBe("Movie to update");
     expect(category.description).toBe("Movie description to update");
 
-    category.update({ name: "Updated name" });
+    category.update({
+      name: "Updated name",
+      description: "Updated description",
+    });
 
     expect(category.name).toBe("Updated name");
-    expect(category.description).toBe("Movie description to update");
+    expect(category.description).toBe("Updated description");
 
-    category.update({ description: "Updated description" });
+    category.update({
+      name: "Updated name",
+      description: "Updated description",
+    });
     expect(category.description).toBe("Updated description");
   });
 
