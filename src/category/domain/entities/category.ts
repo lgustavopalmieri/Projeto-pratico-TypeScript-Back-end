@@ -18,6 +18,21 @@ export default class Category extends Entity<CategoryProperties> {
     this.props.created_at = this.props.created_at ?? new Date();
   }
 
+  public update({ name, description }: Partial<CategoryProperties>): void {
+    this.props.name = name;
+    this.props.description = description;
+    Category.validate({
+      name,
+      description,
+    });
+  }
+
+  static validate(props: Omit<CategoryProperties, "id" | "created_at">) {
+    ValidatorRules.values(props.name, "name").required().string();
+    ValidatorRules.values(props.description, "description").string();
+    ValidatorRules.values(props.is_active, "is_active").boolean();
+  }
+
   get name(): string {
     return this.props.name;
   }
@@ -40,21 +55,6 @@ export default class Category extends Entity<CategoryProperties> {
 
   get created_at() {
     return this.props.created_at;
-  }
-
-  public update({ name, description }: Partial<CategoryProperties>): void {
-    this.props.name = name;
-    this.props.description = description;
-    Category.validate({
-      name,
-      description,
-    });
-  }
-
-  static validate(props: Omit<CategoryProperties, "id" | "created_at">) {
-    ValidatorRules.values(props.name, "name").required().string();
-    ValidatorRules.values(props.description, "description").string();
-    ValidatorRules.values(props.is_active, "is_active").boolean();
   }
 
   public activate(): void {
