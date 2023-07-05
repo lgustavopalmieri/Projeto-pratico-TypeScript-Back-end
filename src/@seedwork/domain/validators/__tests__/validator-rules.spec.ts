@@ -1,4 +1,5 @@
-import ValidationError from "../../errors/validation-error";
+
+import ValidationError from "../../../../@seedwork/domain/errors/validation-error";
 import ValidatorRules from "../validator-rules";
 
 type Values = {
@@ -225,7 +226,7 @@ describe("ValidatorRules unit tests", () => {
   });
 
   it("should validate when combine two or more validation rules", () => {
-    // 
+    //
     expect.assertions(0);
     ValidatorRules.values("test", "field").required().string();
     ValidatorRules.values("test", "field").required().string().maxLength(4);

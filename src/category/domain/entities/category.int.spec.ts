@@ -1,4 +1,4 @@
-import ValidationError from "../../../@seedwork/errors/validation-error";
+import ValidationError from "../../../@seedwork/domain/errors/validation-error";
 import Category from "./category";
 import { omit } from "lodash";
 describe("Category integration tests", () => {
